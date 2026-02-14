@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: radial-gradient(circle at center, #0d2d3e 0%, #0a192f 100%);
+            color: #ccd6f6;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 1100px;
+            display: flex;
+            flex-direction: row; /* Fixes side-by-side alignment */
+            align-items: center;
+            gap: 100px; /* Forces space to prevent overlap */
+            padding: 40px;
+        }
+        .profile-pic-container {
+            position: relative;
+            flex-shrink: 0; /* Prevents image from squishing */
+        }
+        .profile-pic {
+            width: 320px;
+            height: 320px;
+            border-radius: 4px;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+        .profile-pic-container::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 320px;
+            height: 320px;
+            border: 2px solid #64ffda;
+            border-radius: 4px;
+            z-index: 1;
+        }
+        .text-content h1 { font-size: 3.5rem; margin: 0; color: #ccd6f6; }
+        .highlight { color: #64ffda; }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.1rem;
+            background-color: #64ffda;
+            margin-left: 8px;
+            animation: blink 1s step-end infinite;
+            vertical-align: baseline;
+        }
+        @keyframes blink { 50% { background-color: transparent; } }
+        .button-group { display: flex; gap: 15px; margin-top: 30px; }
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border: 1px solid #64ffda;
+            border-radius: 4px;
+            color: #64ffda;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn:hover { background: rgba(100, 255, 218, 0.1); transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-pic-container">
+            <img src="/uploads/BC2025009_pic.jpeg" alt="Ananya" class="profile-pic">
+        </div>
+        <div class="text-content">
+            <h1>hi, <span class="highlight">ananya</span> here.<span class="cursor"></span></h1>
+            <p>Student ID: <strong>BC2025009</strong></p>
+            <div class="button-group">
+                <a href="https://www.linkedin.com/in/ananya-singh-a826a433a/" target="_blank" class="btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/pixelbrownie" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
